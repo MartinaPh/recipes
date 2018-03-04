@@ -5,23 +5,23 @@ class Ingredient
     /**
      * Type of the ingredient.
      * 
-     * @var type 
+     * @var string 
      */
-private $type;
+    private $type;
 
     /**
      * Unity of the quantity of the ingredient.
      * 
-     * @var type 
+     * @var string 
      */
-private $unity;
+    private $unity;
 
     /**
      * Quantity of the ingredient.
      * 
-     * @var type 
+     * @var int 
      */
-private $quantity;
+    private $quantity;
 
     /**
      * Returns the type.
@@ -29,66 +29,70 @@ private $quantity;
      * @return string
      */
      
-public function getType(): string    
-{
- return $this->type;  
-}
+    public function getType(): string
+    {
+     return $this->type;  
+    }
 
     /**
      * Sets the type.
      * 
      * @param string $type
+     * 
+     * @return self
      */
-public function setType(string $type): self       
-{
-$this->type = $type;
+    public function setType(string $type): self    
+    {
+    $this->type = $type;
 
-return $this;
-}
+    return $this;
+    }
     
     /**
      * Returns the unity.
      * 
      * @return string
      */
-public function getUnity(): string
-{
-    return $this->unity;
-} 
+    public function getUnity(): string
+    {
+        return $this->unity;
+    } 
 
     /**
      * Sets the unity.
      * 
      * @param string $unity
+     * 
+     * @return self
      */
-public function setUnity(string $unity): self
-{
+    public function setUnity(string $unity): self
+    {
     $this->unity = $unity;
     
     return $this;
-}
+    }
 
     /**
      * Returns the quantity.
      * 
      * @return int
      */
-public function getQuantity(): int
-{
+    public function getQuantity(): int
+    {
     return $this->quantity;
-}
+    }
 
     /**
      * Sets the quantity.
      * 
      * @param int $quantity
+     * 
+     * @return self
      */
-public function setQuantity(int $quantity): self
-{
+    public function setQuantity(int $quantity): self
+    {
     $this->quantity = $quantity;
     
     return $this;
-}
-
-
+    }
 }

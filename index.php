@@ -10,8 +10,6 @@
         include './Model/Recipe.php';
         include './View/Recipe.php';
         include './Model/Ingredient.php';
-        include './Model/Chapter.php';
-        include './View/Chapter.php';
 
         $pizzaSalami = new Ingredient();
         $pizzaSalami->setType('Salami');
@@ -22,6 +20,16 @@
         $pizzaCheese->setType('Käse');
         $pizzaCheese->setUnity('Packungen');
         $pizzaCheese->setQuantity(7);
+        
+        $lasagneSalami = new Ingredient();
+        $lasagneSalami->setType('Salami');
+        $lasagneSalami->setUnity('schöne');
+        $lasagneSalami->setQuantity(4);
+        
+        $lasagneCheese = new Ingredient();
+        $lasagneCheese->setType('Käse');
+        $lasagneCheese->setUnity('Räder');
+        $lasagneCheese->setQuantity(3);
         
         $salatKartoffeln = new Ingredient();
         $salatKartoffeln->setType('Kartoffeln');
@@ -39,44 +47,26 @@
         $salatSaureGurken->setQuantity(1);
          
         $kartoffelsalatRecipe = new Recipe;
-        $kartoffelsalatRecipe->setName('Kartoffelsalat');
-        $kartoffelsalatRecipe->description = 'Alles vermischen';
-        $kartoffelsalatRecipe->setDuration(5);
-        $kartoffelsalatRecipe->setPreparationTime(30);
-        $kartoffelsalatRecipe->setIngredients([$salatKartoffeln, $salatZwiebeln, $salatSaureGurken]);
+        $kartoffelsalatRecipe->setName('Kartoffelsalat')
+                ->setDescription('Alles vermischen')
+                ->setDuration(8)
+                ->setPreparationTime(30)
+                ->setIngredients
+                ([$salatKartoffeln, $salatZwiebeln, $salatSaureGurken]);
         
         $pizzaRecipe = new Recipe;
-        $pizzaRecipe->setName('Pizza');
-        $pizzaRecipe->description = 'Mix everything together';
-        $pizzaRecipe->setDuration(5)
-                ->setPreparationTime(20);
-        $pizzaRecipe->setIngredients([$pizzaSalami, $pizzaCheese]);
+        $pizzaRecipe->setName('Pizza')
+                ->setDescription('Mix everything together')
+                ->setDuration(5)
+                ->setPreparationTime(20)
+                ->setIngredients([$pizzaSalami, $pizzaCheese]);
         
         $lasagneRecipe = new Recipe;
         $lasagneRecipe->setName('Lasagne')
-                ->description = 'Egal...';
-        $lasagneRecipe->setDuration(10000);
-        
-        
-        /*
-        
-        $vorspeise = new Chapter();
-        
-        $hauptspeise = new Chapter();
-        
-        $salat = new Chapter();
-        
-        $dessert = new Chapter();
-        
-        
-        showChapter($vorspeise);
-        echo '<br>';
-        showChapter($hauptspeise);
-        echo '<br>';
-        showChapter($salat);
-        echo '<br>';
-        showChapter($dessert);
-        */
+                ->setDescription('Alles in eine Form')
+                ->setDuration(10000)
+                ->setPreparationTime(20)
+                ->setIngredients([$lasagneSalami, $lasagneCheese]);
         
         showRecipe($pizzaRecipe);
         echo '<br>';

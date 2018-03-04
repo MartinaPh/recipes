@@ -73,6 +73,19 @@ class Recipe
         return $this;
     }
     
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+    
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+        
+        return $this;
+    }
+
+
     /**
      * Returns the duration.
      * 
@@ -128,25 +141,25 @@ class Recipe
      * Returns the total time.
      * 
      * @return int
-     */
+     *
     public function getTotalTime(): int
     {
         return $this->totalTime + $this->totalTime;
     }
     
-    /**
+    
      * Sets the total time.
      * 
      * @param int $totalTime
      * 
      * @return self
-     */
+     *
     public function setTotalTime(int $totalTime): self
     {
         $this->totalTime = $totalTime;
         
         return $this;
-    }
+    }*/
     
     /**
      * Gets the ingredients.

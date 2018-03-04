@@ -1,14 +1,22 @@
 <?php
 
+/**
+ * Shows recipe. The function is repeated for every object (instance?) 
+ * of the class "recipe".
+ * 
+ * @param Recipe $recipe
+ */
 function showRecipe(Recipe $recipe)
 {
         echo '<h2>' . $recipe->getName() . '</h2>';
         echo '<br />';
-        echo '<br />' . $recipe->description;
+        echo '<br />' . $recipe->getDescription();
         echo '<br />';
         echo '<br />Duration: ' . $recipe->getDuration();
         echo '<br />Preparation: ' . $recipe->getPreparationTime();
-        echo '<br />Total time: ' . $recipe->getTotalTime();
+       /* echo '<br />Total time: ' . $recipe->getTotalTime();*/
+        
+        
         if (!empty($recipe->getIngredients())) {
             echo '<h3>Ingredients:</h3>';
         }
@@ -21,3 +29,4 @@ function showRecipe(Recipe $recipe)
             
         }
 }
+
